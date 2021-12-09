@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<title>jQuery elevateZoom Demo</title>
+	<script src='jquery-3.6.0.min.js'></script>
+	<script src='jquery.elevatezoom.js'></script>
+	<style>
+	.d-flex{
+     display: flex;
+	 
+	}
+	.text-align{
+		text-align: center;
+	}
+
+	.bg-grey{
+		background-color: gray;
+	}
+
+	.bg-white{
+		background-color:white;
+	}
+	</style>
+</head>
+
+<body class="bg-grey">
+<div class="d-flex">
+<h1>Basic Zoom </h1>
+<br>
+<!-- <img id="zoom_01" src='images/small/image1.png' data-zoom-image="images/large/image1.jpg"/> -->
+<img id="zoom_01" src='images/small/image1.png' data-zoom-image="images/small/image1.png" />
+
+<br>
+<br>
+<h1 >Tints zoom</h1>
+<br>
+<img id="zoom_02" src="images/small/image1.png" data-zoom-image="images/large/image1.jpg" />
+</div>
+<br> 
+<br>
+<div class="d-flex">
+<h1>Mousewheel Zoom</h1>
+<img id="zoom_mw" src="images/small/image1.png" data-zoom-image="images/large/image1.jpg"/>
+<br>
+<h1>Lens Zoom</h1>
+<img id="zoom_07" src="images/small/image1.png" data-zoom-image="images/large/image1.jpg"/>
+</div>
+<br>
+<div class="text-align">
+	<p>
+		دموی زوم برای عکس های سایت شما / طراحی توسط عمران جمشیدی
+	</p>
+	
+</div>
+
+
+<script>
+	//Basic Zoom
+	$("#zoom_01").elevateZoom({
+		scrollZoom : true,
+		zoomType   : "inner",
+		// zoomType   : "lens",
+		lensShape : "round",
+		lensSize    : 200,
+		cursor: "crosshair",
+		zoomWindowFadeIn: 500,
+		zoomWindowFadeOut: 750
+	});
+
+
+	//Tints zoom
+	$("#zoom_02").elevateZoom({
+		tint:true,
+		 tintColour:'#F90', 
+		 tintOpacity:0.5
+		});
+
+
+
+	//Mousewheel Zoom
+		$("#zoom_mw").elevateZoom({
+			scrollZoom : true
+		});
+
+		$("#zoom_09").elevateZoom({
+            gallery : "gallery_09",
+            galleryActiveClass: "active"
+    	  		}); 
+
+    //Lens Zoom
+	$("#zoom_07").elevateZoom({
+	zoomType				: "lens",
+	lensShape : "round",
+	lensSize    : 200
+	});
+            
+</script>
+</body>
+</html>
